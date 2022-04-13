@@ -1,23 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.gpa.GPAFragment" >
+    android:orientation="vertical"
+    android:layout_margin="10dp"
+    >
 
-    <TextView
-        android:id="@+id/text_gpa"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/grade"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:autofillHints=""
+            android:textDirection="locale"
+            android:hint="@string/your_grade_or_cgpa"
+            android:inputType="text"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/hours"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="2dp"
+            android:layout_weight="1"
+            android:autofillHints=""
+            android:hint="@string/number_of_credit_hours"
+            android:inputType="number"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
-</android.support.constraint.ConstraintLayout>
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/add"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:background="@drawable/custom_button"
+            android:layout_margin="10dp"
+            android:text="@string/add"
+            android:onClick="add"
+            />
+
+        <Button
+            android:id="@+id/calc"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:background="@drawable/custom_button"
+            android:layout_margin="10dp"
+            android:text="@string/calculate_gpa"
+            android:onClick="calculateTotal"
+            />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="501dp">
+
+        <TextView
+            android:id="@+id/result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="#FF2E1E"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+    </ScrollView>
+
+
+</LinearLayout>

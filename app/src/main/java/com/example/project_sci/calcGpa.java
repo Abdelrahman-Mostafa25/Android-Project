@@ -12,7 +12,6 @@ import android.widget.Toast;
 import java.util.regex.Pattern;
 import android.support.v7.app.AppCompatActivity;
 
-
 public class calcGpa extends AppCompatActivity {
 
     int totalHours=0,tmpHrs=0;
@@ -101,7 +100,7 @@ public class calcGpa extends AppCompatActivity {
 
     public void add (View v)
     {
-        result=findViewById(R.id.result);
+        result=v.findViewById(R.id.result);
         if(checkValidInput(grade.getText().toString(),hours.getText().toString())) {
             calcTotalPoints();
             return;

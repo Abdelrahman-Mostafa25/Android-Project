@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Faculty of Science</string>
+    <string name="app_name">SCI</string>
     <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
     <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
     <string name="nav_header_title">Computer Science Department</string>                   <!--  Android Studio   -->
@@ -11,7 +11,7 @@
     <string name="menu_gallery">News</string>
     <string name="menu_slideshow">Events</string>
     <string name="menu_anon">Alerts For Students</string>
-    <string name="menu_face">Face Book</string>
+    <string name="menu_face">facebook</string>
     <string name="menu_gpa">GPA Calculator</string>
     <string name="menu_complaints">Complaints and Suggestions Form</string>
     <string name="your_grade_or_cgpa">Course Grade or CGPA</string>

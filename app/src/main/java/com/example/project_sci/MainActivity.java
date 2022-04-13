@@ -17,7 +17,7 @@ import android.support.v7.widget.Toolbar;
 import com.example.project_sci.ui.comp.Complaints;
 
 
-public class MainActivity extends AppCompatActivity {
+public class    MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
 
