@@ -1,17 +1,17 @@
 <resources>
-    <string name="app_name">project_sci</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="app_name">Faculty of Science</string>
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
     <string name="nav_header_title">Computer Science Department</string>                   <!--  Android Studio   -->
     <string name="nav_header_subtitle">Faculty Of Science Ain Shams University</string>      <!--   android.studio@android.com  -->
-    <string name="nav_header_desc">Navigation header</string>
+    <string name="nav_header_desc" translatable="false">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_home">Announcement</string>
+    <string name="menu_home">Advertisement</string>
     <string name="menu_gallery">News</string>
     <string name="menu_slideshow">Events</string>
     <string name="menu_anon">Alerts For Students</string>
-    <string name="menu_face">Facebook</string>
+    <string name="menu_face">Face Book</string>
     <string name="menu_gpa">GPA Calculator</string>
     <string name="menu_complaints">Complaints and Suggestions Form</string>
     <string name="your_grade_or_cgpa">your Grade or CGPA</string>

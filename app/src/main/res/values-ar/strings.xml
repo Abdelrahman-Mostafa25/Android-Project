@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">كليه العلوم</string>
+    <string name="nav_header_title">قسم علوم الحاسب</string>
+    <string name="nav_header_subtitle">كليه العلوم جامعة عين شمس</string>
+    <string name="action_settings">اعدادات</string>
+    <string name="menu_home">اعلانات</string>
+    <string name="menu_gallery">اخبار</string>
+    <string name="menu_slideshow">احداث</string>
+    <string name="menu_anon">تنبيه للطلاب</string>
+    <string name="menu_face">فيسبوك</string>
+    <string name="menu_gpa">"GPA حاسبة  "</string>
+    <string name="menu_complaints">شكاوي و اقتراحات</string>
+    <string name="number_of_credit_hours">عدد الساعات المعتمده</string>
+    <string name="your_grade_or_cgpa">التقدير او المعدل التراكمي</string>
+    <string name="add">اضف</string>
+    <string name="calculate_gpa">"احسب المعدل "</string>
+</resources>

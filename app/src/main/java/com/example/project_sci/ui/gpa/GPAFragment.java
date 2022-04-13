@@ -22,7 +22,6 @@ public class GPAFragment extends Fragment {
 
         View root = inflater.inflate(R.layout.fragment_g_p_a, container, false);
         final TextView textView = root.findViewById(R.id.text_gpa);
-
         return root;
     }
 
