@@ -14,7 +14,7 @@ import android.support.v4.app.Fragment;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProvider;
 import com.example.project_sci.R;
-import com.example.project_sci.ui.gallery.GalleryViewModel;
+
 
 public class FaceFragment extends Fragment {
 
