@@ -9,10 +9,10 @@
     <string name="menu_slideshow">احداث</string>
     <string name="menu_anon">تنبيه للطلاب</string>
     <string name="menu_face">فيسبوك</string>
-    <string name="menu_gpa">"GPA حاسبة  "</string>
+    <string name="menu_gpa">"GPA حاسبة"</string>
     <string name="menu_complaints">شكاوي و اقتراحات</string>
     <string name="number_of_credit_hours">عدد الساعات المعتمده</string>
-    <string name="your_grade_or_cgpa">التقدير او المعدل التراكمي</string>
+    <string name="your_grade_or_cgpa">تقدير مقرر او معدل تراكمي</string>
     <string name="add">اضف</string>
-    <string name="calculate_gpa">"احسب المعدل "</string>
+    <string name="calculate_gpa">"احسب المعدل"</string>
 </resources>
