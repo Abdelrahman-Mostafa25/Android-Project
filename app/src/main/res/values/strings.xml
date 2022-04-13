@@ -14,5 +14,9 @@
     <string name="menu_face">Face Book</string>
     <string name="menu_gpa">GPA Calculator</string>
     <string name="menu_complaints">Complaints and Suggestions Form</string>
-<!--    <string name="menu_start">start_activity</string>-->
+    <string name="your_grade_or_cgpa">your Grade or CGPA</string>
+    <string name="number_of_credit_hours">Number of Credit Hours</string>
+    <string name="add">Add</string>
+    <string name="calculate_gpa">Calculate GPA</string>
+    <!--    <string name="menu_start">start_activity</string>-->
 </resources>

@@ -24,7 +24,8 @@
         <item
             android:id="@+id/nav_gpa"
             android:icon="@drawable/ic_gpa"
-            android:title="@string/menu_gpa" />
+            android:title="@string/menu_gpa"
+            android:onClick="goToCalculator"/>
         <item
             android:id="@+id/nav_face"
             android:icon="@drawable/ic_face"
