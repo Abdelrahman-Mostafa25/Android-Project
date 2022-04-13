@@ -26,9 +26,21 @@
             android:icon="@drawable/ic_gpa"
             android:title="@string/menu_gpa"
             />
-        <item
-            android:id="@+id/nav_face"
-            android:icon="@drawable/ic_face"
-            android:title="@string/menu_face" />
+
     </group>
+
+    <item android:title="To contact us">
+        <menu>
+
+            <item
+                android:id="@+id/nav_face"
+                android:icon="@drawable/ic_face"
+                android:title="@string/menu_face" />
+
+            <item android:id="@+id/nav_comp"
+                android:icon="@drawable/ic_complaint"
+                android:title="Complaints and Suggestions Form"/>
+        </menu>
+
+    </item>
 </menu>

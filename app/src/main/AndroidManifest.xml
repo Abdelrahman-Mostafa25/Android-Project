@@ -17,9 +17,6 @@
         <activity android:name=".st_activity" >
         </activity>
         <activity
-            android:name=".ui.comp.Complaints"
-            android:label="@string/menu_complaints" />
-        <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.Project_sci.NoActionBar" >

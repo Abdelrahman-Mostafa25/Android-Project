@@ -11,6 +11,11 @@
         android:label="@string/menu_anon"
         tools:layout="@layout/fragment_anon" />
     <fragment
+        android:id="@+id/nav_comp"
+        android:name="com.example.project_sci.ui.comp.CompFragment"
+        android:label="@string/menu_complaints"
+        tools:layout="@layout/fragment_comp" />
+    <fragment
         android:id="@+id/nav_gpa"
         android:name="com.example.project_sci.ui.gpa.GPAFragment"
         android:label="@string/menu_gpa"
