@@ -2,7 +2,7 @@
 # Project report for ASU faculty of science mobile application.
 _____________________________________________________
 
-                   Team Members
+Team Members
 
 1-Abdelrahman Mustapha: Project XML, Activity Design & UX
 
