@@ -76,7 +76,8 @@ public class    MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
-
+        checkNewFeeds checkNotification = new checkNewFeeds();
+        checkNotification.execute();
     }
 
     //Notification Methods +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
@@ -122,7 +123,7 @@ public class    MainActivity extends AppCompatActivity {
         startActivity(i);
     }
 
-    private class checkWebPage extends AsyncTask<Void, Void, Void> {
+    private class checkNewFeeds extends AsyncTask<Void, Void, Void> {
 
         @Override
         protected Void doInBackground(Void... voids){
@@ -144,7 +145,7 @@ public class    MainActivity extends AppCompatActivity {
                         createNotification(leatestNews,leatestNewsTitle);
 
                     }
-                    if (!leatesAnnouncement.equals(getAnnouncement())) {
+                    if (!leatesAnnouncement.equals(getAnnouncement())) { //For Test make  getAnnouncement() be getNews()
 
                         leatesAnnouncement = getAnnouncement();
                         System.out.println(leatesAnnouncement);
@@ -161,7 +162,7 @@ public class    MainActivity extends AppCompatActivity {
                     System.out.println("Request Sent");
 
                 }
-            },0,900000);
+            },0,900000); //Call Every 15 Mins
 
             return null;
         }
@@ -188,9 +189,9 @@ public class    MainActivity extends AppCompatActivity {
     }
     public static String getAnnouncement () {
         try {
-            Document doc = Jsoup.connect("https://science.asu.edu.eg/ar/events").get();
+            Document doc = Jsoup.connect("https://science.asu.edu.eg/ar/announcements").get();
             leatestAnnouncementTitle = doc.title();
-            Elements elems = doc.getElementsByClass("max-h-12 overflow-ellipsis overflow-hidden");
+            Elements elems = doc.getElementsByClass("line-clamp-3 dir-rtl");
 
             Element elem = elems.first();
 
