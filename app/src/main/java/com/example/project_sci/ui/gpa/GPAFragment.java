@@ -31,7 +31,7 @@ public class GPAFragment extends Fragment {
     Float resGpa=new Float(0);
     String gr;
 
-    Pattern grades = Pattern.compile("(A-|A|B|B\\+|B-|C|C\\+|C-|D\\+|D|a|b|c|d|a-|b-|c-|b\\+|c\\+|d\\+)");
+    Pattern grades = Pattern.compile("(A-|A|B|B\\+|B-|C|C\\+|C-|D\\+|D|a|b|c|d|a-|b-|c-|b\\+|c\\+|d\\+|f|F)");
     Pattern fraction = Pattern.compile("\\d+(\\.\\d+)?");
 
     EditText grade,hours;
