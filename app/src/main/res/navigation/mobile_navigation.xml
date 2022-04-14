@@ -33,7 +33,7 @@
 
     <fragment
         android:id="@+id/nav_home1"
-        android:name="com.example.project_sci.ui.fragment_home1"
+        android:name="com.example.project_sci.ui.home_page.fragment_home1"
         android:label="@string/home_page"
         tools:layout="@layout/fragment_home1" />
 

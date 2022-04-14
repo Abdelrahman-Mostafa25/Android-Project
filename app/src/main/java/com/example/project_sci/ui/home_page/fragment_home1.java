@@ -1,4 +1,4 @@
-package com.example.project_sci.ui;
+package com.example.project_sci.ui.home_page;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
