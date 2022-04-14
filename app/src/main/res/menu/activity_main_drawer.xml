@@ -29,7 +29,7 @@
 
     </group>
 
-    <item android:title="To contact us">
+    <item android:title="@string/to_contact_us">
         <menu>
 
             <item
@@ -39,7 +39,7 @@
 
             <item android:id="@+id/nav_comp"
                 android:icon="@drawable/ic_complaint"
-                android:title="Complaints and Suggestions Form"/>
+                android:title="@string/menu_complaints"/>
         </menu>
 
     </item>
