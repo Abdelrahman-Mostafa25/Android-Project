@@ -34,7 +34,8 @@
             android:hint="@string/number_of_credit_hours"
             android:inputType="number"
             android:textSize="15sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:layout_marginLeft="2dp" />
 
     </LinearLayout>
 
@@ -80,7 +81,7 @@
             android:id="@+id/result"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
+            android:text="@string/determine_your_grade_in_a_course_in_the_first_field"
             android:textColor="#FF2E1E"
             android:textSize="25sp"
             android:textStyle="bold" />

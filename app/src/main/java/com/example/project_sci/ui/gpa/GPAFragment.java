@@ -129,7 +129,7 @@ public class GPAFragment extends Fragment {
         {
             totalPoints += (Float.parseFloat(gr)*tmpHrs);
         }
-        result.append(gr.toUpperCase()+"⠀⠀⠀⠀"+tmpHrs+"\n");
+        result.append("Grade : "+gr.toUpperCase()+"⠀⠀Credits : "+tmpHrs+"\n\n");
 
     }
 
@@ -159,7 +159,7 @@ public class GPAFragment extends Fragment {
 
         resGpa=totalPoints/totalHours;
         if(totalHours>0 ) {
-            String cgpa=(resGpa.toString().length()>6)?(resGpa.toString().substring(0,5)):(resGpa.toString());
+            String cgpa=(resGpa.toString().length()>6)?(resGpa.toString().substring(0,4)):(resGpa.toString());
             result.append("Your Gpa is : "+cgpa );
             grade.onEditorAction(EditorInfo.IME_ACTION_DONE);
         }

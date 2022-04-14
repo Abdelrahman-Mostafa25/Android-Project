@@ -15,4 +15,6 @@
     <string name="add">اضف</string>
     <string name="calculate_gpa">"احسب المعدل"</string>
     <string name="to_contact_us">تواصل معنا</string>
+    <string name="home_page">الصفحة الرئيسية</string>
+    <string name="determine_your_grade_in_a_course_in_the_first_field">التعليمات </string>
 </resources>
