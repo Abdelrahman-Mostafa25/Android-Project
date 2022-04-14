@@ -4,7 +4,10 @@ package com.example.project_sci;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -48,6 +51,7 @@ public class    MainActivity extends AppCompatActivity {
     String leatestEvent;
     String channelId="abc";
     int notificationID =0;
+    static boolean isConnected = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -102,6 +106,22 @@ public class    MainActivity extends AppCompatActivity {
         NMC.notify(notificationID,builder.build());
     }
     ////Notification Methods +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+    boolean isConnectedToInternet(){
+        ConnectivityManager connectivityManager = null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
+            connectivityManager = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+        }
+        if(connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
+                connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED) {
+            //we are connected to a network
+            isConnected= true;
+
+            return true;
+        }
+        isConnected = false;
+        return false;
+    }
+
 
 
 //    @Override
@@ -127,43 +147,42 @@ public class    MainActivity extends AppCompatActivity {
 
         @Override
         protected Void doInBackground(Void... voids){
-
+            if (isConnectedToInternet()) {
             leatestNews = getNews();
             leatesAnnouncement = getAnnouncement();
             leatestEvent = getEvent();
 
-            new Timer().scheduleAtFixedRate(new TimerTask(){
-                @Override
-                public void run(){
+                new Timer().scheduleAtFixedRate(new TimerTask() {
+                    @Override
+                    public void run() {
 
 
+                        if (!leatestNews.equals(getNews()) && isConnectedToInternet()) {
 
-                    if (!leatestNews.equals(getNews())) {
+                            leatestNews = getNews();
+                            System.out.println(leatestNews);
+                            createNotification(leatestNews, leatestNewsTitle);
 
-                        leatestNews = getNews();
-                        System.out.println(leatestNews);
-                        createNotification(leatestNews,leatestNewsTitle);
+                        }
+                        if (!leatesAnnouncement.equals(getAnnouncement())&& isConnectedToInternet()) { //For Test make  getAnnouncement() be getNews()
+
+                            leatesAnnouncement = getAnnouncement();
+                            System.out.println(leatesAnnouncement);
+                            createNotification(leatesAnnouncement, leatestAnnouncementTitle);
+
+                        }
+                        if (!leatestEvent.equals(getEvent()) && isConnectedToInternet() ) {
+
+                            leatestEvent = getEvent();
+                            System.out.println(leatestEvent);
+                            createNotification(leatestEvent, leatestEventTitle);
+
+                        }
+                        System.out.println("Request Sent");
 
                     }
-                    if (!leatesAnnouncement.equals(getAnnouncement())) { //For Test make  getAnnouncement() be getNews()
-
-                        leatesAnnouncement = getAnnouncement();
-                        System.out.println(leatesAnnouncement);
-                        createNotification(leatesAnnouncement,leatestAnnouncementTitle);
-
-                    }
-                    if (!leatestEvent.equals(getEvent())) {
-
-                        leatestEvent = getEvent();
-                        System.out.println(leatestEvent);
-                        createNotification(leatestEvent,leatestEventTitle);
-
-                    }
-                    System.out.println("Request Sent");
-
-                }
-            },0,900000); //Call Every 15 Mins
-
+                }, 0, 900000); //Call Every 15 Mins
+            }
             return null;
         }
 
@@ -189,6 +208,7 @@ public class    MainActivity extends AppCompatActivity {
     }
     public static String getAnnouncement () {
         try {
+
             Document doc = Jsoup.connect("https://science.asu.edu.eg/ar/announcements").get();
             leatestAnnouncementTitle = doc.title();
             Elements elems = doc.getElementsByClass("line-clamp-3 dir-rtl");
@@ -203,6 +223,7 @@ public class    MainActivity extends AppCompatActivity {
     }
     public static String getEvent () {
         try {
+
             Document doc = Jsoup.connect("https://science.asu.edu.eg/ar/events").get();
             leatestEventTitle = doc.title();
             Elements elems = doc.getElementsByClass("max-h-12 overflow-ellipsis overflow-hidden");
@@ -214,6 +235,7 @@ public class    MainActivity extends AppCompatActivity {
         } catch (IOException e){
             return e.getMessage();
         }
+
     }
 
 
