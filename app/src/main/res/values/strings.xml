@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">SCI</string>
     <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
     <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
@@ -13,13 +13,9 @@
     <string name="menu_anon">Alert For Students</string>
     <string name="menu_face">facebook</string>
     <string name="menu_gpa">GPA Calculator</string>
-<<<<<<< Updated upstream
-    <string name="menu_complaints">Complaints and Suggestions Form</string>
-    <string name="your_grade_or_cgpa">Course Grade or GPA</string>
-=======
     <string name="menu_complaints">Complaints and Suggestions</string>
     <string name="your_grade_or_cgpa">Course Grade or CGPA</string>
->>>>>>> Stashed changes
+
     <string name="number_of_credit_hours">Number of Credit Hours</string>
     <string name="add">Add</string>
     <string name="calculate_gpa">Calculate GPA</string>
