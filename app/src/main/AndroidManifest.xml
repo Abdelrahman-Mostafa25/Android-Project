@@ -11,9 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Project_sci" >
-        <activity
-            android:name=".calcGpa"
-            android:exported="false" />
+<!--        <activity-->
+<!--            android:name=".calcGpa"-->
+<!--            android:exported="false" />-->
         <activity android:name=".st_activity" >
         </activity>
         <activity

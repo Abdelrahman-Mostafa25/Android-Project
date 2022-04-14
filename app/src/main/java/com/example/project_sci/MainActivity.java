@@ -22,10 +22,10 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
+//import org.jsoup.Jsoup;
+//import org.jsoup.nodes.Document;
+//import org.jsoup.nodes.Element;
+//import org.jsoup.select.Elements;
 
 import java.io.IOException;
 import java.util.Timer;
@@ -114,47 +114,47 @@ public class    MainActivity extends AppCompatActivity {
         startActivity(i);
     }
 
-    private class checkWebPage extends AsyncTask<Void, Void, Void> {
+//    private class checkWebPage extends AsyncTask<Void, Void, Void> {
+//
+//        @Override
+//        protected Void doInBackground(Void... voids) {
+//            leatestNews = getNews(); // Node-NoSQL-Auth
+//
+//            new Timer().scheduleAtFixedRate(new TimerTask(){
+//                @Override
+//                public void run(){
+//
+//                    String newDate = getNews();
+//
+//                    if (!leatestNews.equals(newDate)) {
+//
+//                        leatestNews = newDate;
+//                        System.out.println(leatestNews);
+//                        createNotification(leatestNews);
+//
+//                    }
+//                }
+//            },0,900000);
+//
+//            return null;
+//        }
+//
+//    }
 
-        @Override
-        protected Void doInBackground(Void... voids) {
-            leatestNews = getNews(); // Node-NoSQL-Auth
-
-            new Timer().scheduleAtFixedRate(new TimerTask(){
-                @Override
-                public void run(){
-
-                    String newDate = getNews();
-
-                    if (!leatestNews.equals(newDate)) {
-
-                        leatestNews = newDate;
-                        System.out.println(leatestNews);
-                        createNotification(leatestNews);
-
-                    }
-                }
-            },0,900000);
-
-            return null;
-        }
-
-    }
-
-    public static String getNews () {
-        try {
-            Document doc = Jsoup.connect("https://science.asu.edu.eg/ar/events").get();
-            notiTitle = doc.title();
-            Elements elems = doc.getElementsByClass("max-h-12 overflow-ellipsis overflow-hidden");
-
-            Element elem = elems.first();
-
-            return elem.text();
-
-        } catch (IOException e){
-            return e.getMessage();
-        }
-    }
+//    public static String getNews () {
+//        try {
+//            Document doc = Jsoup.connect("https://science.asu.edu.eg/ar/events").get();
+//            notiTitle = doc.title();
+//            Elements elems = doc.getElementsByClass("max-h-12 overflow-ellipsis overflow-hidden");
+//
+//            Element elem = elems.first();
+//
+//            return elem.text();
+//
+//        } catch (IOException e){
+//            return e.getMessage();
+//        }
+//    }
 
 
 }
