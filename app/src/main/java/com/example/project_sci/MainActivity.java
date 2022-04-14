@@ -27,6 +27,11 @@ import androidx.navigation.ui.NavigationUI;
 //import org.jsoup.nodes.Element;
 //import org.jsoup.select.Elements;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
 import java.io.IOException;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -35,11 +40,14 @@ import java.util.TimerTask;
 public class    MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
-    public String leatestNews;
-    public static String notiTitle;
-    private String channelId="abc";
-    private int notificationID =0;
-
+    static String leatestNewsTitle;
+    String leatestNews;
+    static String leatestAnnouncementTitle;
+    String leatesAnnouncement;
+    static String leatestEventTitle;
+    String leatestEvent;
+    String channelId="abc";
+    int notificationID =0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,10 +90,10 @@ public class    MainActivity extends AppCompatActivity {
     }
 
     //Notification Display
-    void createNotification(String st){
+    void createNotification(String st,String Title){
         createChannel();
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this,channelId);
-        builder.setContentTitle("Faculty of Science Notification")
+        builder.setContentTitle(Title)
                 .setContentText(st)
                 .setSmallIcon(R.drawable.ic_launcher_background);
         NotificationManagerCompat NMC = NotificationManagerCompat.from(this);
@@ -114,47 +122,98 @@ public class    MainActivity extends AppCompatActivity {
         startActivity(i);
     }
 
-//    private class checkWebPage extends AsyncTask<Void, Void, Void> {
-//
-//        @Override
-//        protected Void doInBackground(Void... voids) {
-//            leatestNews = getNews(); // Node-NoSQL-Auth
-//
-//            new Timer().scheduleAtFixedRate(new TimerTask(){
-//                @Override
-//                public void run(){
-//
-//                    String newDate = getNews();
-//
-//                    if (!leatestNews.equals(newDate)) {
-//
-//                        leatestNews = newDate;
-//                        System.out.println(leatestNews);
-//                        createNotification(leatestNews);
-//
-//                    }
-//                }
-//            },0,900000);
-//
-//            return null;
-//        }
-//
-//    }
+    private class checkWebPage extends AsyncTask<Void, Void, Void> {
 
-//    public static String getNews () {
-//        try {
-//            Document doc = Jsoup.connect("https://science.asu.edu.eg/ar/events").get();
-//            notiTitle = doc.title();
-//            Elements elems = doc.getElementsByClass("max-h-12 overflow-ellipsis overflow-hidden");
-//
-//            Element elem = elems.first();
-//
-//            return elem.text();
-//
-//        } catch (IOException e){
-//            return e.getMessage();
-//        }
-//    }
+        @Override
+        protected Void doInBackground(Void... voids){
+
+            leatestNews = getNews();
+            leatesAnnouncement = getAnnouncement();
+            leatestEvent = getEvent();
+
+            new Timer().scheduleAtFixedRate(new TimerTask(){
+                @Override
+                public void run(){
+
+
+
+                    if (!leatestNews.equals(getNews())) {
+
+                        leatestNews = getNews();
+                        System.out.println(leatestNews);
+                        createNotification(leatestNews,leatestNewsTitle);
+
+                    }
+                    if (!leatesAnnouncement.equals(getAnnouncement())) {
+
+                        leatesAnnouncement = getAnnouncement();
+                        System.out.println(leatesAnnouncement);
+                        createNotification(leatesAnnouncement,leatestAnnouncementTitle);
+
+                    }
+                    if (!leatestEvent.equals(getEvent())) {
+
+                        leatestEvent = getEvent();
+                        System.out.println(leatestEvent);
+                        createNotification(leatestEvent,leatestEventTitle);
+
+                    }
+                    System.out.println("Request Sent");
+
+                }
+            },0,900000);
+
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+        }
+    }
+
+    public static String getNews () {
+        try {
+            Document doc = Jsoup.connect("https://science.asu.edu.eg/ar/news").get();
+            leatestNewsTitle = doc.title();
+            Elements elems = doc.getElementsByClass("line-clamp-3");
+
+            Element elem = elems.first();
+
+            return elem.text();
+
+        } catch (IOException e){
+            return e.getMessage();
+        }
+    }
+    public static String getAnnouncement () {
+        try {
+            Document doc = Jsoup.connect("https://science.asu.edu.eg/ar/events").get();
+            leatestAnnouncementTitle = doc.title();
+            Elements elems = doc.getElementsByClass("max-h-12 overflow-ellipsis overflow-hidden");
+
+            Element elem = elems.first();
+
+            return elem.text();
+
+        } catch (IOException e){
+            return e.getMessage();
+        }
+    }
+    public static String getEvent () {
+        try {
+            Document doc = Jsoup.connect("https://science.asu.edu.eg/ar/events").get();
+            leatestEventTitle = doc.title();
+            Elements elems = doc.getElementsByClass("max-h-12 overflow-ellipsis overflow-hidden");
+
+            Element elem = elems.first();
+
+            return elem.text();
+
+        } catch (IOException e){
+            return e.getMessage();
+        }
+    }
 
 
 }
