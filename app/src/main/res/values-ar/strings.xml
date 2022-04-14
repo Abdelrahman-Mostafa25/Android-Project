@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">كلية العلوم</string>
     <string name="nav_header_title">قسم علوم الحاسب</string>
     <string name="nav_header_subtitle">كلية العلوم جامعة عين شمس</string>
     <string name="action_settings">اعدادات</string>
