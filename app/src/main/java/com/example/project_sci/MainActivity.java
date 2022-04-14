@@ -36,6 +36,7 @@ public class    MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     public String leatestNews;
+    public static String notiTitle;
     private String channelId="abc";
     private int notificationID =0;
 
@@ -83,7 +84,7 @@ public class    MainActivity extends AppCompatActivity {
     void createNotification(String st){
         createChannel();
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this,channelId);
-        builder.setContentTitle("My Notification Title")
+        builder.setContentTitle("Faculty of Science Notification")
                 .setContentText(st)
                 .setSmallIcon(R.drawable.ic_launcher_background);
         NotificationManagerCompat NMC = NotificationManagerCompat.from(this);
@@ -142,7 +143,7 @@ public class    MainActivity extends AppCompatActivity {
     public static String getNews () {
         try {
             Document doc = Jsoup.connect("https://science.asu.edu.eg/ar/events").get();
-
+            notiTitle = doc.title();
             Elements elems = doc.getElementsByClass("max-h-12 overflow-ellipsis overflow-hidden");
 
             Element elem = elems.first();
