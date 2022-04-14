@@ -5,6 +5,7 @@ package com.example.project_sci;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -20,6 +21,15 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+import java.io.IOException;
+import java.util.Timer;
+import java.util.TimerTask;
 
 
 public class    MainActivity extends AppCompatActivity {
@@ -100,6 +110,48 @@ public class    MainActivity extends AppCompatActivity {
     public void goToCalculator(MenuItem item) {
         Intent i=new Intent(this,calcGpa.class);
         startActivity(i);
+    }
+
+    private class checkWebPage extends AsyncTask<Void, Void, Void> {
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+            leatestNews = getNews(); // Node-NoSQL-Auth
+
+            new Timer().scheduleAtFixedRate(new TimerTask(){
+                @Override
+                public void run(){
+
+                    String newDate = getNews();
+
+                    if (!leatestNews.equals(newDate)) {
+
+                        leatestNews = newDate;
+                        System.out.println(leatestNews);
+                        createNotification(leatestNews);
+
+                    }
+                }
+            },0,900000);
+
+            return null;
+        }
+
+    }
+
+    public static String getNews () {
+        try {
+            Document doc = Jsoup.connect("https://science.asu.edu.eg/ar/events").get();
+
+            Elements elems = doc.getElementsByClass("max-h-12 overflow-ellipsis overflow-hidden");
+
+            Element elem = elems.first();
+
+            return elem.text();
+
+        } catch (IOException e){
+            return e.getMessage();
+        }
     }
 
 
