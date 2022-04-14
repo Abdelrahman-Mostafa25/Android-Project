@@ -1,18 +1,25 @@
 package com.example.project_sci;
 
+
+
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
-import android.view.View;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
+
+import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.NotificationManagerCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
+import android.view.View;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 
 import com.example.project_sci.ui.comp.Complaints;
 
@@ -20,6 +27,9 @@ import com.example.project_sci.ui.comp.Complaints;
 public class    MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
+    public String leatestNews;
+    private String channelId="abc";
+    private int notificationID =0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +61,30 @@ public class    MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navigationView, navController);
     }
 
+    //Notification Methods +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+    void createChannel(){
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            NotificationChannel NC = new NotificationChannel(channelId,"My Notification Channel", NotificationManager.IMPORTANCE_DEFAULT);
+            NC.setDescription("Get Notification");
+            NotificationManager NMG = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
+            NMG.createNotificationChannel(NC);
+        }
+    }
+
+    //Notification Display
+    void createNotification(String st){
+        createChannel();
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this,channelId);
+        builder.setContentTitle("My Notification Title")
+                .setContentText(st)
+                .setSmallIcon(R.drawable.ic_launcher_background);
+        NotificationManagerCompat NMC = NotificationManagerCompat.from(this);
+        ++notificationID;
+        NMC.notify(notificationID,builder.build());
+    }
+    ////Notification Methods +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
+
 //    @Override
 //    public boolean onCreateOptionsMenu(Menu menu) {             // resp about 3point of setting
 //        // Inflate the menu; this adds items to the action bar if it is present.
@@ -69,4 +103,6 @@ public class    MainActivity extends AppCompatActivity {
         Intent i=new Intent(this,calcGpa.class);
         startActivity(i);
     }
+
+
 }
