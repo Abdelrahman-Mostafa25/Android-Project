@@ -164,7 +164,9 @@ public class GPAFragment extends Fragment {
         if(totalHours>0 ) {
             String cgpa=(resGpa.toString().length()>6)?(resGpa.toString().substring(0,4)):(resGpa.toString());
 
-            if(resGpa>=3.67)
+            if(resGpa>=3.83 && resGpa<=4.0)
+                cgpa+=" (A)";
+           else if(resGpa>=3.67)
                 cgpa+=" (A-)";
             else if(resGpa>=3.33)
                 cgpa+=" (B+)";
@@ -176,8 +178,10 @@ public class GPAFragment extends Fragment {
                 cgpa+=" (C)";
             else if(resGpa>=2)
                 cgpa+=" (D)";
+            else if(resGpa<2 && resGpa>=0)
+                 cgpa+=" (F)";
             else
-                cgpa+=" (F)";
+                cgpa+=" (Error)";
 
             result.append("Your Gpa is : "+cgpa );
             grade.onEditorAction(EditorInfo.IME_ACTION_DONE);
