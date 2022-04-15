@@ -83,7 +83,7 @@
             android:layout_height="wrap_content"
             android:text="@string/determine_your_grade_in_a_course_in_the_first_field"
             android:textColor="#d7000f"
-            android:textSize="25sp"
+            android:textSize="18sp"
             android:textStyle="bold" />
     </ScrollView>
 
