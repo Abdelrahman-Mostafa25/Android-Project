@@ -31,7 +31,7 @@ public class GPAFragment extends Fragment {
 
 
     Float resGpa=new Float(0);
-    String gr,points;
+    String gr,points="";
     Pattern grades = Pattern.compile("(A-|A|B|B\\+|B-|C|C\\+|C-|D\\+|D|a|b|c|d|a-|b-|c-|b\\+|c\\+|d\\+|f|F)");
     Pattern fraction = Pattern.compile("\\d+(\\.\\d+)?");
 
@@ -134,6 +134,7 @@ public class GPAFragment extends Fragment {
                 default:
                     break;
             }
+            points+="_"+curpoints;
             totalPoints+=curpoints;
         }
 
@@ -142,8 +143,7 @@ public class GPAFragment extends Fragment {
             totalPoints += (Float.parseFloat(gr)*tmpHrs);
         }
         result.setGravity(Gravity.CENTER);
-        result.append("Grade : "+gr.toUpperCase()+"⠀⠀Credits : "+curpoints+"\n\n");
-
+        result.append("Grade : "+gr.toUpperCase()+"⠀⠀Credits : "+tmpHrs+"\n\n");
     }
 
     public void add (View v)
@@ -159,14 +159,17 @@ public class GPAFragment extends Fragment {
         hours.setText("");
     }
 
+
      public void delete(View v){
          result=getActivity().findViewById(R.id.result);
 
          if (totalHours > 0) {
              result.setText(result.getText().toString().substring(0, result.getText().toString().lastIndexOf("Grade")));
              totalHours-=tmpHrs;
-             totalPoints-=curpoints;
+             totalPoints-=Float.parseFloat(points.substring(points.lastIndexOf("_")+1));
+             points=points.substring(0,points.lastIndexOf("_"));
          }
+
     }
 
 
@@ -183,6 +186,7 @@ public class GPAFragment extends Fragment {
         hours.setText("");
 
         resGpa=totalPoints/totalHours;
+
         if(totalHours>0 ) {
             String cgpa=(resGpa.toString().length()>6)?(resGpa.toString().substring(0,4)):(resGpa.toString());
 
