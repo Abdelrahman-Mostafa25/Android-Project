@@ -3,6 +3,7 @@ package com.example.project_sci.ui.gpa;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -136,6 +137,7 @@ public class GPAFragment extends Fragment {
     public void add (View v)
     {
         result=getActivity().findViewById(R.id.result);
+        result.setGravity(Gravity.CENTER);
         if(checkValidInput(grade.getText().toString(),hours.getText().toString())) {
             calcTotalPoints();
             return;
@@ -150,6 +152,7 @@ public class GPAFragment extends Fragment {
     public void calculateTotal(View view)
     {
         result=getActivity().findViewById(R.id.result);
+        result.setGravity(Gravity.CENTER);
 
         if(checkValidInput(grade.getText().toString(),hours.getText().toString())) {
             calcTotalPoints();
@@ -160,11 +163,29 @@ public class GPAFragment extends Fragment {
         resGpa=totalPoints/totalHours;
         if(totalHours>0 ) {
             String cgpa=(resGpa.toString().length()>6)?(resGpa.toString().substring(0,4)):(resGpa.toString());
+
+            if(resGpa>=3.67)
+                cgpa+=" (A-)";
+            else if(resGpa>=3.33)
+                cgpa+=" (B+)";
+            else if(resGpa>=3)
+                cgpa+=" (B)";
+            else if(resGpa>=2.67)
+                cgpa+=" (C+)";
+            else if(resGpa>=2.33)
+                cgpa+=" (C)";
+            else if(resGpa>=2)
+                cgpa+=" (D)";
+            else
+                cgpa+=" (F)";
+
             result.append("Your Gpa is : "+cgpa );
             grade.onEditorAction(EditorInfo.IME_ACTION_DONE);
         }
+
         else
             result.setText("Enter your Grades");
+
 
         totalHours=0;
         totalPoints=0;
