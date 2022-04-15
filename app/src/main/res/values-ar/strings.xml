@@ -10,7 +10,7 @@
     <string name="menu_face">فيسبوك</string>
     <string name="menu_gpa">"GPA حاسبة"</string>
     <string name="menu_complaints">اقتراحات و شكاوي</string>
-    <string name="number_of_credit_hours">عدد الساعات المعتمده</string>
+    <string name="number_of_credit_hours">الساعات المعتمده</string>
     <string name="your_grade_or_cgpa">تقدير مقرر او معدل تراكمي</string>
     <string name="add">اضف</string>
     <string name="calculate_gpa">"احسب المعدل"</string>
@@ -18,9 +18,10 @@
     <string name="home_page">الصفحة الرئيسية</string>
     <string name="determine_your_grade_in_a_course_in_the_first_field">
                                 التعليمات : \n\n
-١- حدد تقديرك في الماده[F,A,A-,B,B+,B-,C,C+,C-,D+,D] في الخانه الاولي او المعدل التراكمي .\n\n
+١- حدد تقديرك في الماده[A,A-,B,B+,B-,C,C+,C-,D+,D,F] في الخانه الاولي او المعدل التراكمي .\n\n
 ٢- حدد الساعات المعتمده للماده من 0 الي 4 او الساعات الكليه .\n\n
     </string>
+    <string name="back">"العودة "</string>
 
 
 </resources>

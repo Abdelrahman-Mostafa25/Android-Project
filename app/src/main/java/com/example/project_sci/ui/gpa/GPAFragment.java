@@ -27,17 +27,17 @@ public class GPAFragment extends Fragment {
 
 
     int totalHours=0,tmpHrs=0;
-    float totalPoints=0;
+    float totalPoints=0,curpoints=0;
+
 
     Float resGpa=new Float(0);
-    String gr;
-
+    String gr,points;
     Pattern grades = Pattern.compile("(A-|A|B|B\\+|B-|C|C\\+|C-|D\\+|D|a|b|c|d|a-|b-|c-|b\\+|c\\+|d\\+|f|F)");
     Pattern fraction = Pattern.compile("\\d+(\\.\\d+)?");
 
     EditText grade,hours;
     TextView result;
-    Button ad,calc;
+    Button ad,calc,back;
     public void GPAFragment(){}
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -48,8 +48,11 @@ public class GPAFragment extends Fragment {
 
         ad= root.findViewById(R.id.add);
         calc= root.findViewById(R.id.calc);
+        back= root.findViewById(R.id.back);
+
         grade=root.findViewById(R.id.grade);
         hours=root.findViewById(R.id.hours);
+
 
         ad.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,6 +68,12 @@ public class GPAFragment extends Fragment {
             }
         });
 
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                delete(view);
+            }
+        });
 
         return root;
     }
@@ -88,56 +97,58 @@ public class GPAFragment extends Fragment {
         totalHours+=tmpHrs;
         grade.setText("");
         hours.setText("");
+
         if(grades.matcher(gr).matches())
         {
             switch (gr.toUpperCase()) {
                 case "A":
-                    totalPoints += (tmpHrs * 4);
+                    curpoints=tmpHrs * 4;
                     break;
                 case "A-":
-                    totalPoints += (tmpHrs * 3.7);
+                    curpoints= (float) (tmpHrs * 3.7);
                     break;
                 case "B+":
-                    totalPoints += (tmpHrs * 3.3);
+                    curpoints= (float) (tmpHrs * 3.3);
                     break;
                 case "B":
-                    totalPoints += (tmpHrs * 3);
+                    curpoints= (float) (tmpHrs * 3);
                     break;
                 case "B-":
-                    totalPoints += (tmpHrs * 2.7);
+                    curpoints= (float)(tmpHrs * 2.7);
                     break;
                 case "C+":
-                    totalPoints += (tmpHrs * 2.3);
+                    curpoints= (float)(tmpHrs * 2.3);
                     break;
                 case "C":
-                    totalPoints += (tmpHrs * 2);
+                    curpoints= (float)(tmpHrs * 2);
                     break;
                 case "C-":
-                    totalPoints += (tmpHrs * 1.7);
+                    curpoints= (float)(tmpHrs * 1.7);
                     break;
                 case "D+":
-                    totalPoints += (tmpHrs * 1.3);
+                    curpoints= (float)(tmpHrs * 1.3);
                     break;
                 case "D":
-                    totalPoints += (tmpHrs);
+                    curpoints= tmpHrs;
                     break;
                 default:
                     break;
             }
+            totalPoints+=curpoints;
         }
 
         else
         {
             totalPoints += (Float.parseFloat(gr)*tmpHrs);
         }
-        result.append("Grade : "+gr.toUpperCase()+"⠀⠀Credits : "+tmpHrs+"\n\n");
+        result.setGravity(Gravity.CENTER);
+        result.append("Grade : "+gr.toUpperCase()+"⠀⠀Credits : "+curpoints+"\n\n");
 
     }
 
     public void add (View v)
     {
         result=getActivity().findViewById(R.id.result);
-        result.setGravity(Gravity.CENTER);
         if(checkValidInput(grade.getText().toString(),hours.getText().toString())) {
             calcTotalPoints();
             return;
@@ -147,6 +158,17 @@ public class GPAFragment extends Fragment {
         grade.setText("");
         hours.setText("");
     }
+
+     public void delete(View v){
+         result=getActivity().findViewById(R.id.result);
+
+         if (totalHours > 0) {
+             result.setText(result.getText().toString().substring(0, result.getText().toString().lastIndexOf("Grade")));
+             totalHours-=tmpHrs;
+             totalPoints-=curpoints;
+         }
+    }
+
 
     @SuppressLint("SetTextI18n")
     public void calculateTotal(View view)
@@ -194,6 +216,7 @@ public class GPAFragment extends Fragment {
         totalHours=0;
         totalPoints=0;
     }
+
 
 
 

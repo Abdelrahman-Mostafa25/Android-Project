@@ -17,7 +17,7 @@
     <string name="menu_complaints">Complaints and Suggestions</string>
     <string name="your_grade_or_cgpa">Course Grade or GPA</string>
 
-    <string name="number_of_credit_hours">Number of Credit Hours</string>
+    <string name="number_of_credit_hours">Credit Hours</string>
     <string name="add">Add</string>
     <string name="calculate_gpa">Calculate GPA</string>
     <string name="to_contact_us">Contact us</string>
@@ -28,5 +28,6 @@
            1- Determine your grade of the course [A,A-,B,B+,B-,C,C+,C-,D+,D,F] in the first field or the Comulative GPA .\n\n
            2- Dertimine credit hours of the Course form 0 to 4 or the total credit hours in the second field .
     </string>
-       <!--    <string name="menu_start">start_activity</string>-->
+    <string name="back">Back</string>
+    <!--    <string name="menu_start">start_activity</string>-->
 </resources>
