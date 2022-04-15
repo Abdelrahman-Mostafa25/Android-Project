@@ -63,7 +63,7 @@
                 android:gravity="right"
                 android:text="تحقيق الإمتياز والريادة في التدريس والبحث العلمي في مجالات العلوم الأساسية وتطبيقاتها لخدمة إحتياجات المجتمع وتحسين الأحوال المعيشية للإنسان."
                 android:textColor="@color/black"
-                android:textSize="25sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
 
@@ -85,7 +85,7 @@
                 android:gravity="right"
                 android:text="تلتزم الكلية بتقديم برامج مهنية متخصصة تلبى الإحتياجات القومية والإقليمية وتمد الطلاب بالمتطلبات المعرفية والتدريب اللازم للإلتحاق بسوق العمل بكفاءة أو بالدراسات العليا بنجاح . كما تعمل الكلية بإصرار على تطوير وتحديث برامجها لتتواءم مع الإحتياجات المتغيرة للمجتمع ولأصحاب المصلحة المستفيدين من خدماتها ."
                 android:textColor="@color/black"
-                android:textSize="25sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -95,7 +95,7 @@
                 android:gravity="right"
                 android:text="كما تشجع الكلية البحوث الأساسية والتطبيقية التي تضيف إلى التقدم العلمي وتحسن من استغلال المصادر الطبيعية وتؤدى إلى زيادة الإنتاج القومي . هذا وتعمل الكلية على إيجاد روابط وثيقة مع القطاع الصناعي المحلى والإقليمي ومؤسسات الخدمة العامة وجمعيات حماية البيئة بهدف رفع المستوى الإجتماعي والإقتصادى للمواطن المصري ."
                 android:textColor="@color/black"
-                android:textSize="25sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -105,7 +105,7 @@
                 android:gravity="right"
                 android:text="وفى جميع مجالات أنشطتها تلتزم الكلية بمستويات أكاديمية عالية وبالإبتكار وبالقيم الأخلاقية وبالفرص المتساوية للجميع من طلاب وأعضاء هيئة التدريس ."
                 android:textColor="@color/black"
-                android:textSize="25sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -115,7 +115,7 @@
                 android:gravity="center"
                 android:text="القيم الخاصة بالكلية كمؤسسة تعليمية"
                 android:textColor="@color/red"
-                android:textSize="35sp"
+                android:textSize="33sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -125,7 +125,7 @@
                 android:gravity="right"
                 android:text="1- ضمان العدالة وعدم التميز بين أعضاء هيئة التدريس."
                 android:textColor="@color/black"
-                android:textSize="25sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -135,7 +135,7 @@
                 android:gravity="right"
                 android:text="2- ضمان العدالة وعدم التميز بين العاملين والإداريين ."
                 android:textColor="@color/black"
-                android:textSize="25sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -145,7 +145,7 @@
                 android:gravity="right"
                 android:text="3- ضمان المساواة بين الطلاب في فرص التعلم بغض النظر عن إنتماءاتهم الدينية أو مستواهم الإجتماعي ."
                 android:textColor="@color/black"
-                android:textSize="25sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -155,7 +155,7 @@
                 android:gravity="right"
                 android:text="4- ضمان حرية الرأي لأعضاء هيئة التدريس والعاملين والطلاب ."
                 android:textColor="@color/black"
-                android:textSize="25sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
 
@@ -166,7 +166,7 @@
                 android:gravity="center"
                 android:text="الغايات والأهداف الإستراتيجية للكلية"
                 android:textColor="@color/red"
-                android:textSize="35sp"
+                android:textSize="33sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -176,7 +176,7 @@
                 android:gravity="right"
                 android:text="تطوير وتحديث البيئة التحتية بالكلية"
                 android:textColor="@color/teal_700"
-                android:textSize="30sp"
+                android:textSize="28sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -186,7 +186,7 @@
                 android:gravity="right"
                 android:text="أ‌- إستكمال تطوير قاعات الدرس والمعامل ."
                 android:textColor="@color/black"
-                android:textSize="25sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -196,7 +196,7 @@
                 android:gravity="right"
                 android:text="ب‌- تطوير وصيانة المنشآت والمرافق بالكلية ."
                 android:textColor="@color/black"
-                android:textSize="25sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -206,7 +206,7 @@
                 android:gravity="right"
                 android:text="خريج متميز قادر على المنافسة فى سوق العمل محلياً وإقليمياً"
                 android:textColor="@color/teal_700"
-                android:textSize="30sp"
+                android:textSize="28sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -216,7 +216,7 @@
                 android:gravity="right"
                 android:text="أ‌- تقديم برامج ومقررات تعليمية متطورة لمرحلة البكالوريوس ."
                 android:textColor="@color/black"
-                android:textSize="25sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -226,7 +226,7 @@
                 android:gravity="right"
                 android:text="ب‌- التحسين المستمر للعملية التعليمية وفقا للتطور العالمى ."
                 android:textColor="@color/black"
-                android:textSize="25sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -236,7 +236,7 @@
                 android:gravity="right"
                 android:text="جـ– الرعاية المتميزة للطلاب ."
                 android:textColor="@color/black"
-                android:textSize="25sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -246,7 +246,7 @@
                 android:gravity="right"
                 android:text="دراسات عليا وبحث علمى متميز"
                 android:textColor="@color/teal_700"
-                android:textSize="30sp"
+                android:textSize="28sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -256,7 +256,7 @@
                 android:gravity="right"
                 android:text="أ– تطوير العلمية التعليمية للدراسات العليا بالكلية ( اللائحة – مواصفات الخريج )"
                 android:textColor="@color/black"
-                android:textSize="25sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -266,7 +266,7 @@
                 android:gravity="right"
                 android:text="ب- بحوث علمية مبتكرة محلياً وعالمياً ."
                 android:textColor="@color/black"
-                android:textSize="25sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -276,7 +276,7 @@
                 android:gravity="right"
                 android:text="جـ- تنوع مصادر تمويل البحث العلمى على المستوى المحلى والعالمى ."
                 android:textColor="@color/black"
-                android:textSize="25sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -286,7 +286,7 @@
                 android:gravity="right"
                 android:text="تنمية الموارد البشرية"
                 android:textColor="@color/teal_700"
-                android:textSize="30sp"
+                android:textSize="28sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -296,7 +296,7 @@
                 android:gravity="right"
                 android:text="أ‌- عضو هيئة التدريس – هيئة معاونة متميزة معرفياً ومهنياً ومهارياً"
                 android:textColor="@color/black"
-                android:textSize="25sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -306,7 +306,7 @@
                 android:gravity="right"
                 android:text="ب‌- جهاز إدارى كفئ وفعال ."
                 android:textColor="@color/black"
-                android:textSize="25sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -316,7 +316,7 @@
                 android:gravity="right"
                 android:text="التلاحم بين الكلية والمجتمع"
                 android:textColor="@color/teal_700"
-                android:textSize="30sp"
+                android:textSize="28sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -326,7 +326,7 @@
                 android:gravity="right"
                 android:text="أ‌- زيادة مشاركة الأطراف المجتمعية فى أنشطة الكلية"
                 android:textColor="@color/black"
-                android:textSize="25sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -336,7 +336,7 @@
                 android:gravity="right"
                 android:text="ب‌- تقديم خدمات مجتمعية ذات قيمة عالية"
                 android:textColor="@color/black"
-                android:textSize="25sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
         </LinearLayout>
