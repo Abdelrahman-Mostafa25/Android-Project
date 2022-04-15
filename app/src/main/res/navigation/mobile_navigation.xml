@@ -3,13 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home1">
+    app:startDestination="@id/nav_home_page">
 
     <fragment
-        android:id="@+id/nav_anon"
-        android:name="com.example.project_sci.ui.anon.AnonFragment"
-        android:label="@string/menu_anon"
-        tools:layout="@layout/fragment_anon" />
+        android:id="@+id/nav_alert"
+        android:name="com.example.project_sci.ui.alert.AlertFragment"
+        android:label="@string/menu_alert"
+        tools:layout="@layout/fragment_alert" />
     <fragment
         android:id="@+id/nav_comp"
         android:name="com.example.project_sci.ui.comp.CompFragment"
@@ -26,26 +26,26 @@
         android:label="@string/menu_face"
         tools:layout="@layout/fragment_face" />
     <fragment
-        android:id="@+id/nav_home"
-        android:name="com.example.project_sci.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/nav_annon"
+        android:name="com.example.project_sci.ui.annou.AnnouFragment"
+        android:label="@string/menu_annou"
+        tools:layout="@layout/fragment_annou" />
 
     <fragment
-        android:id="@+id/nav_home1"
-        android:name="com.example.project_sci.ui.home_page.fragment_home1"
+        android:id="@+id/nav_home_page"
+        android:name="com.example.project_sci.ui.home_page.Home_pagefragment"
         android:label="@string/home_page"
-        tools:layout="@layout/fragment_home1" />
+        tools:layout="@layout/fragment_home_page" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.project_sci.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_news"
+        android:name="com.example.project_sci.ui.news.NewsFragment"
+        android:label="@string/menu_news"
+        tools:layout="@layout/fragment_news" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.project_sci.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_events"
+        android:name="com.example.project_sci.ui.events.EventsFragment"
+        android:label="@string/menu_events"
+        tools:layout="@layout/fragment_events" />
 </navigation>

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".ui.home_page.Home_pagefragment" >
 
 
     <ScrollView
@@ -12,13 +13,25 @@
         android:layout_height="match_parent"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="-30dp"
-        android:layout_marginBottom="10dp">
+        android:layout_marginBottom="10dp"
+        android:id="@+id/text_home"
+        android:scrollbarStyle="outsideOverlay">
+
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginRight="5dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+           >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="350dp"
+                android:src="@drawable/colljpg"
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/home_page" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -331,4 +344,4 @@
 
     </ScrollView>
 
-</android.support.constraint.ConstraintLayout>
+</FrameLayout>

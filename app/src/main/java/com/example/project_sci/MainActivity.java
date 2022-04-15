@@ -5,12 +5,10 @@ package com.example.project_sci;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Context;
-import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 
 import android.support.v4.app.NotificationCompat;
@@ -18,8 +16,7 @@ import android.support.v4.app.NotificationManagerCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.MenuItem;
-import android.view.View;
+
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -74,7 +71,7 @@ public class    MainActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow,R.id.nav_anon,R.id.nav_face,R.id.nav_gpa,R.id.nav_home1)
+                R.id.nav_annon, R.id.nav_news, R.id.nav_events,R.id.nav_alert,R.id.nav_face,R.id.nav_gpa,R.id.nav_home_page)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
@@ -138,10 +135,10 @@ public class    MainActivity extends AppCompatActivity {
                 || super.onSupportNavigateUp();
     }
 
-    public void goToCalculator(MenuItem item) {
-        Intent i=new Intent(this,calcGpa.class);
-        startActivity(i);
-    }
+//    public void goToCalculator(MenuItem item) {
+//        Intent i=new Intent(this,calcGpa.class);
+//        startActivity(i);
+//    }
 
     private class checkNewFeeds extends AsyncTask<Void, Void, Void> {
 

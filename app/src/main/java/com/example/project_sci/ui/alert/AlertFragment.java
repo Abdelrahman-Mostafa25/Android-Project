@@ -1,4 +1,4 @@
-package com.example.project_sci.ui.gallery;
+package com.example.project_sci.ui.alert;
 
 import android.os.Bundle;
 import android.support.v4.app.SharedElementCallback;
@@ -7,23 +7,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.TextView;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.arch.lifecycle.Observer;
-import android.arch.lifecycle.ViewModelProvider;
+
 import com.example.project_sci.R;
 
-public class GalleryFragment extends Fragment {
+
+public class AlertFragment extends Fragment {
 
     WebView myWebView;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
-            ViewGroup container, Bundle savedInstanceState) {
+                             ViewGroup container, Bundle savedInstanceState) {
 
-        View root = inflater.inflate(R.layout.fragment_gallery, container, false);
-        WebView myWebView = root.findViewById(R.id.webview2);
+        View root = inflater.inflate(R.layout.fragment_alert, container, false);
+        WebView myWebView = root.findViewById(R.id.webview6);
 
         myWebView.getSettings().setJavaScriptEnabled(true);
         myWebView.getSettings().setAllowContentAccess(true);
@@ -32,8 +30,7 @@ public class GalleryFragment extends Fragment {
         myWebView.getSettings().setLoadWithOverviewMode(true);
         myWebView.getSettings().setAppCacheEnabled(true);
         myWebView.setWebViewClient(new WebViewClient());
-        myWebView.loadUrl("https://science.asu.edu.eg/ar/news");
-
+        myWebView.loadUrl("https://science.asu.edu.eg/ar/page/47/private-ads");
         return root;
     }
     @Override

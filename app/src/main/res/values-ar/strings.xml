@@ -3,10 +3,10 @@
     <string name="nav_header_title">قسم علوم الحاسب</string>
     <string name="nav_header_subtitle">كلية العلوم جامعة عين شمس</string>
     <string name="action_settings">اعدادات</string>
-    <string name="menu_home">اعلانات</string>
-    <string name="menu_gallery">اخبار</string>
-    <string name="menu_slideshow">احداث</string>
-    <string name="menu_anon">تنبيه للطلاب</string>
+    <string name="menu_annou">اعلانات</string>
+    <string name="menu_news">اخبار</string>
+    <string name="menu_events">احداث</string>
+    <string name="menu_alert">تنبيهات للطلاب</string>
     <string name="menu_face">فيسبوك</string>
     <string name="menu_gpa">"GPA حاسبة"</string>
     <string name="menu_complaints">اقتراحات و شكاوي</string>
@@ -18,7 +18,13 @@
     <string name="home_page">الصفحة الرئيسية</string>
     <string name="determine_your_grade_in_a_course_in_the_first_field">
                                 التعليمات : \n\n
-١- حدد تقديرك في الماده[A,A-,B,B+,B-,C,C+,C-,D+,D] في الخانه الاولي او المعدل التراكمي .\n\n
-٢- حدد الساعات المعتمده للماده من 0 الي 4 او الساعات الكليه .\n\n
+١- حدد تقديرك في الماده في الخانه الاولي او المعدل التراكمي .\n\n
+٢- حدد الساعات المعتمده للماده او الساعات الكليه .\n\n
     </string>
+    <string name="college_vision">
+                                رؤية الكلية : \n\n
+تحقيق الإمتياز والريادة في التدريس والبحث العلمي في مجالات العلوم الأساسية وتطبيقاتها لخدمة إحتياجات المجتمع وتحسين الأحوال المعيشية للإنسان.
+ .\n\n
+    </string>
+
 </resources>
